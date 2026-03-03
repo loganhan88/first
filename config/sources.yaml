@@ -1,0 +1,28 @@
+# 主要媒体源（可按需增删）
+sources:
+  - name: Reuters Markets
+    type: rss
+    url: https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best
+    weight: 1.3
+  - name: Bloomberg Markets
+    type: rss
+    url: https://feeds.bloomberg.com/markets/news.rss
+    weight: 1.2
+  - name: CNBC World News
+    type: rss
+    url: https://www.cnbc.com/id/100727362/device/rss/rss.html
+    weight: 1.0
+  - name: Financial Times Markets
+    type: rss
+    url: https://www.ft.com/markets?format=rss
+    weight: 1.1
+
+# 每个来源每日最多抓取文章数量
+max_articles_per_source: 30
+
+# 情绪标签区间（-100 ~ 100）
+score_bands:
+  very_bearish: -60
+  bearish: -20
+  neutral: 20
+  bullish: 60
