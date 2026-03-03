@@ -12,6 +12,14 @@
 
 ## 快速开始
 
+### 方式一：一键运行（推荐）
+
+```bash
+./run.sh
+```
+
+### 方式二：手动运行
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -63,3 +71,9 @@ python main.py --hour 9 --minute 30
 - 用 FinBERT / 多语种 Transformer 替代词典法
 - 增加事件权重（央行、非农、财报季）
 - 对接仪表盘（Streamlit/Grafana）
+
+
+## 常见问题
+
+- 如果 `pip install -r requirements.txt` 因网络/代理失败，程序会在 `feedparser` 不可用时自动回退到标准库 RSS 解析。
+- 仍建议在可联网环境安装完整依赖，以获得更好的兼容性。

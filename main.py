@@ -4,9 +4,6 @@ import argparse
 import logging
 import time
 
-import schedule
-
-from market_sentiment.pipeline import SentimentPipeline
 
 
 def setup_logging() -> None:
@@ -17,6 +14,9 @@ def setup_logging() -> None:
 
 
 def run_daily(hour: int = 8, minute: int = 0) -> None:
+    import schedule
+    from market_sentiment.pipeline import SentimentPipeline
+
     pipeline = SentimentPipeline()
 
     def _job() -> None:
@@ -34,6 +34,8 @@ def run_daily(hour: int = 8, minute: int = 0) -> None:
 
 
 def run_once() -> None:
+    from market_sentiment.pipeline import SentimentPipeline
+
     pipeline = SentimentPipeline()
     report = pipeline.run_once()
     print(
